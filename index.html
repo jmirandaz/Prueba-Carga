@@ -1,0 +1,2022 @@
+<!DOCTYPE html>
+<html lang="es" class="altoCompleto">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name = "viewport" content = "initial-scale = 1.0, user-scalable = no, maximum-scale=1, minimum-scale=1, width=device-width">
+        <meta http-equiv="cache-control" content="max-age=0" />
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="expires" content="0" />
+        <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+        <meta http-equiv="pragma" content="no-cache" />
+
+        <title>Infobras</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="a/js/libs/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="a/js/libs/bootstrap/3.3.2/plugins/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="a/js/libs/bootstrap/3.3.2/plugins/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <style type="text/css"> 
+            body{
+                background-color: #fff;
+                /*border: 1px solid blue;*/
+                overflow: hidden;  
+            }
+            /*Subpantalla*/
+            .divSubpantalla{
+                overflow: auto;      
+                /*border: 1px solid red;*/
+            }
+            /*Intro*/
+            #divSubpantalla00{
+                height: 100%;
+            }
+            .outer {
+                display: table;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+            }
+            .middle {
+                display: table-cell;
+                vertical-align: middle;
+            }
+            .inner {
+                margin-left: auto;
+                margin-right: auto; 
+                display: block;
+            }
+			/*Login*/
+			.imgLogo{
+				margin-top: 100px;
+			}
+            /*Obras*/
+            .carouselObra{
+                /*height: 200px;*/
+                width: 100%;
+            }
+			.btn{
+				margin-top: 5px;
+			}
+            /*Modales*/
+            .modalBodySimulador{
+                padding: 0px 15px;
+            }
+            .rowPregunta{
+                margin-top: 15px;
+                margin-bottom: 25px;
+            }
+			.imgMiniatura{			
+                height: 200px;
+			}
+            /*Modal detalle*/
+            .carouselObraDetalle{
+                /*height: 200px;*/
+                width: 100%;
+                margin-bottom: 25px;
+            }
+			.tabDetalle{
+				font-size: 11px !important;
+				border-radius: 4px 4px 0px 0px !important;
+			}
+			.tabPanel{
+				border-radius: 0px 0px 4px 4px !important;
+			}
+			.imgPerfil{
+				height: 100px;
+			}			
+            /*Utiles*/  
+            .textoResaltado{
+                font-weight: bold;
+            }
+            /*Auxiliares*/
+            .altoCompleto{
+                width: 100%;
+                height: 100%;
+                min-height: 300px;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            .quitarPaddingLados{
+                padding-left: 0px !important;
+                padding-right: 0px !important;
+            }
+            .backgroundRojo{
+                background-color: #A31223;
+            }
+            .colorBlanco{
+                color: #fff;
+            }
+            .sinScroll{
+                overflow: hidden;
+            }
+            .yScroll{
+                overflow-y: auto;
+            }
+			h1{
+				font-size: 25px !important;
+			}
+			h3{
+				font-size: 18px !important;
+			}
+			h4{
+				font-size: 15px !important;
+			}
+            /*  bhoechie tab */
+            div.bhoechie-tab-container{
+                z-index: 10;
+                padding: 0 !important;
+                border-radius: 0px;
+                -moz-border-radius: 0px;
+                /*border:1px solid #ddd;*/
+            }
+            div.bhoechie-tab-menu{
+                padding-right: 0;
+                padding-left: 0;
+                padding-bottom: 0;
+            }
+            div.bhoechie-tab-menu div.list-group{
+                margin-bottom: 0;
+            }
+            div.bhoechie-tab-menu div.list-group>a{
+                margin-bottom: 0;
+            }
+            div.bhoechie-tab-menu div.list-group>a:first-child{
+                border-radius: 0px;
+                -moz-border-radius: 0px;
+                border-top-right-radius: 0;
+                -moz-border-top-right-radius: 0;
+            }
+            div.bhoechie-tab-menu div.list-group>a:last-child{
+                border-radius: 0px;
+                -moz-border-radius: 0px;
+                border-bottom-right-radius: 0;
+                -moz-border-bottom-right-radius: 0;
+            }
+            div.bhoechie-tab-menu div.list-group>a.active:after{
+                content: '';
+                position: absolute;
+                left: 100%;
+                top: 50%;
+                margin-top: -13px;
+                border-left: 0;
+                border-bottom: 13px solid transparent;
+                border-top: 13px solid transparent;
+                /*border-left: 10px solid #337ab7;*/
+            }
+
+            div.bhoechie-tab-content{
+                padding-left: 20px;
+                padding-right:  20px;
+                padding-top: 20px;
+            }
+
+            div.bhoechie-tab div.bhoechie-tab-content:not(.active){
+                display: none;
+            }
+            /*naranja*/  
+            div.bhoechie-tab-menu-naranja div.list-group>a.active:after{
+                border-left: 10px solid #f2931f;
+            }
+            div.bhoechie-tab-menu-naranja div.list-group>a.active,
+            div.bhoechie-tab-menu-naranja div.list-group>a.active .glyphicon,
+            div.bhoechie-tab-menu-naranja div.list-group>a.active .fa{
+                background-color: #f2931f;
+                background-image: #f2931f;
+                color: #ffffff;
+            }
+            div.bhoechie-tab-menu-naranja div.list-group>a .glyphicon,
+            div.bhoechie-tab-menu-naranja div.list-group>a .fa {
+                color: #f2931f;
+            }
+            /*verde*/  
+            div.bhoechie-tab-menu-verde div.list-group>a.active:after{
+                border-left: 10px solid #2e6da4;
+            }
+            div.bhoechie-tab-menu-verde div.list-group>a.active,
+            div.bhoechie-tab-menu-verde div.list-group>a.active .glyphicon,
+            div.bhoechie-tab-menu-verde div.list-group>a.active .fa{
+                background-color: #2e6da4;
+                background-image: #2e6da4;
+                color: #ffffff;
+            }
+            div.bhoechie-tab-menu-verde div.list-group>a .glyphicon,
+            div.bhoechie-tab-menu-verde div.list-group>a .fa {
+                color: #2e6da4;
+            }
+            /*celeste*/  
+            div.bhoechie-tab-menu-celeste div.list-group>a.active:after{
+                border-left: 10px solid #009edf;
+            }
+            div.bhoechie-tab-menu-celeste div.list-group>a.active,
+            div.bhoechie-tab-menu-celeste div.list-group>a.active .glyphicon,
+            div.bhoechie-tab-menu-celeste div.list-group>a.active .fa{
+                background-color: #009edf;
+                background-image: #009edf;
+                color: #ffffff;
+            }
+            div.bhoechie-tab-menu-celeste div.list-group>a .glyphicon,
+            div.bhoechie-tab-menu-celeste div.list-group>a .fa {
+                color: #009edf;
+            }
+            /*quitar borde*/
+            .list-group-item.active{
+                border: none !important;
+            }
+        </style>
+    </head>
+
+    <body class="altoCompleto backgroundRojo">
+        <div class="container altoCompleto">
+            <div id="divSubpantalla00" class="outer backgroundRojo">	
+                <div class="text-center middle"> 
+                    <img src="img/intro.png" class="imgIntro">
+                </div>
+            </div><!--fin subpantalla-->
+
+            <div id="divSubpantalla01" class="row divSubpantalla " style="display: none;">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="panel backgroundRojo">
+                        <div class="panel-body">
+                            <div class="col-xs-12 text-center">
+                                <img src="img/logo.png" class="imgLogo"/>
+                                <form class="form-horizontal" role="form">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <span class="glyphicon glyphicon-user"></span>
+                                            </div>
+                                            <input class="form-control" placeholder="Código de Usuario">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-addon">                                                
+                                                <span class="glyphicon glyphicon-lock"></span>
+                                            </div>
+                                            <input class="form-control" placeholder="Contraseña">
+                                        </div>
+                                    </div>
+                                    <div class="form-group text-center">
+                                        <button id="btnAceptar" class="btn btn-success btn-lg btn-block" type="button">Ingresar</button>
+                                    </div>
+                                    <div class="form-group text-center colorBlanco">
+                                        ¿Olvidó su contraseña?
+                                    </div>
+                                </form>
+                            </div>
+                        </div><!--fin panel body-->
+                    </div><!--fin panel-->
+                </div>
+            </div><!--fin subpantalla-->
+
+            <div id="divSubpantalla02" class="row divSubpantalla altoCompleto sinScroll" style="visibility: hidden;">
+                <div  class="col-xs-12 col-md-offset-2 col-md-8">
+                    <h1 class="colorBlanco text-center">Obras Asignadas</h1>
+                </div>
+                <div  class="col-xs-12 col-md-offset-2 col-md-8" style="height: 29%; margin-bottom: 25px;">
+                    <div id="mapa01" class="mapa" style="width: 100%; height: 100%; "></div>
+                </div>                
+                <div class="col-xs-12 col-md-offset-2 col-md-8 yScroll" style="height: 60%; border-color: 1px solid yellow;">
+                    <div class="row yScroll">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="thumbnail">
+                                <div id="carousel01" class="carousel slide carouselObra" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
+                                        <li data-target="#carousel-example-captions" data-slide-to="1"></li>
+                                        <li data-target="#carousel-example-captions" data-slide-to="2"></li>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <div class="item active">
+                                            <img src="img/obras/imagen20160715072022.jpg" class="imgMiniatura" alt="Primera Imagen">
+                                        </div>
+                                        <div class="item">
+                                            <img src="img/obras/imagen20160715072022.jpg" class="imgMiniatura" alt="Primera Imagen">
+                                        </div>
+                                        <div class="item">
+                                            <img src="img/obras/imagen20160715072022.jpg" class="imgMiniatura" alt="Primera Imagen">
+                                        </div>
+                                    </div>
+                                    <a class="left carousel-control" href="#carousel-example-captions" role="button" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left"></span>
+                                    </a>
+                                    <a class="right carousel-control" href="#carousel-example-captions" role="button" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right"></span>
+                                    </a>
+                                </div>
+
+                                <div class="caption">
+                                    <span class="label label-success pull-right">En Ejecución</span>
+                                    <h3>Mejoramiento de los servicios de Salud del Hospital II-1 Santa Gema de Yruimaguas</h3>
+                                    <p>Calle José Galvez / Julio C. Ruiz / Ucayali Yurimaguas</p>
+                                    <div class="text-center">
+										<button type="button" class="btn btn-xs btn-primary btnDetalle" data-indice="0">
+											<span class="glyphicon glyphicon-info-sign"></span> Detalle
+										</button>
+										<button type="button" class="btn btn-xs btn-primary btnMapa" data-indice="0">
+											<span class="glyphicon glyphicon-map-marker"></span> Mapa
+										</button>
+										<button type="button" class="btn btn-xs btn-success btnRegistro" data-indice="0">
+											<span class="glyphicon glyphicon-eye-open"></span> Visitas
+										</button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="thumbnail">
+                                <div id="carousel01" class="carousel slide carouselObra" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
+                                        <li data-target="#carousel-example-captions" data-slide-to="1"></li>
+                                        <li data-target="#carousel-example-captions" data-slide-to="2"></li>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <div class="item active">
+                                            <img src="img/obras/imagen20160715072242.jpg" class="imgMiniatura" alt="Primera Imagen">
+                                        </div>
+                                        <div class="item">
+                                            <img src="img/obras/imagen20160715072242.jpg" class="imgMiniatura" alt="Primera Imagen">
+                                        </div>
+                                        <div class="item">
+                                            <img src="img/obras/imagen20160715072242.jpg" class="imgMiniatura" alt="Primera Imagen">
+                                        </div>
+                                    </div>
+                                    <a class="left carousel-control" href="#carousel-example-captions" role="button" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left"></span>
+                                    </a>
+                                    <a class="right carousel-control" href="#carousel-example-captions" role="button" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right"></span>
+                                    </a>
+                                </div>
+
+                                <div class="caption">
+                                    <span class="label label-warning pull-right">Observada</span>
+                                    <h3>Mejoramiento de los servicios de Salud del Hospital II-1 Santa Gema de Yruimaguas</h3>
+                                    <p>Calle José Galvez / Julio C. Ruiz / Ucayali Yurimaguas</p>
+                                    <div class="text-center">
+										<button type="button" class="btn btn-xs btn-primary btnDetalle" data-indice="0">
+											<span class="glyphicon glyphicon-info-sign"></span> Detalle
+										</button>
+										<button type="button" class="btn btn-xs btn-primary btnMapa" data-indice="0">
+											<span class="glyphicon glyphicon-map-marker"></span> Mapa
+										</button>
+										<button type="button" class="btn btn-xs btn-success btnRegistro" data-indice="0">
+											<span class="glyphicon glyphicon-eye-open"></span> Visitas
+										</button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="thumbnail">
+                                <div id="carousel01" class="carousel slide carouselObra" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
+                                        <li data-target="#carousel-example-captions" data-slide-to="1"></li>
+                                        <li data-target="#carousel-example-captions" data-slide-to="2"></li>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <div class="item active">
+                                            <img src="img/obras/imagen20160715071931.jpg" class="imgMiniatura" alt="Primera Imagen">
+                                        </div>
+                                        <div class="item">
+                                            <img src="img/obras/imagen20160715071931.jpg" class="imgMiniatura" alt="Primera Imagen">
+                                        </div>
+                                        <div class="item">
+                                            <img src="img/obras/imagen20160715071931.jpg" class="imgMiniatura" alt="Primera Imagen">
+                                        </div>
+                                    </div>
+                                    <a class="left carousel-control" href="#carousel-example-captions" role="button" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left"></span>
+                                    </a>
+                                    <a class="right carousel-control" href="#carousel-example-captions" role="button" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right"></span>
+                                    </a>
+                                </div>
+
+                                <div class="caption">
+                                    <span class="label label-success pull-right">En Ejecución</span>
+                                    <h3>Mejoramiento de los servicios de Salud del Hospital II-1 Santa Gema de Yruimaguas</h3>
+                                    <p>Calle José Galvez / Julio C. Ruiz / Ucayali Yurimaguas</p>
+                                    <div class="text-center">
+										<button type="button" class="btn btn-xs btn-primary btnDetalle" data-indice="0">
+											<span class="glyphicon glyphicon-info-sign"></span> Detalle
+										</button>
+										<button type="button" class="btn btn-xs btn-primary btnMapa" data-indice="0">
+											<span class="glyphicon glyphicon-map-marker"></span> Mapa
+										</button>
+										<button type="button" class="btn btn-xs btn-success btnRegistro" data-indice="0">
+											<span class="glyphicon glyphicon-eye-open"></span> Visitas
+										</button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="thumbnail">
+                                <div id="carousel01" class="carousel slide carouselObra" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
+                                        <li data-target="#carousel-example-captions" data-slide-to="1"></li>
+                                        <li data-target="#carousel-example-captions" data-slide-to="2"></li>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <div class="item active">
+                                            <img src="img/obras/imagen20160715071752.jpg" class="imgMiniatura" alt="Primera Imagen">
+                                        </div>
+                                        <div class="item">
+                                            <img src="img/obras/imagen20160715071752.jpg" class="imgMiniatura" alt="Primera Imagen">
+                                        </div>
+                                        <div class="item">
+                                            <img src="img/obras/imagen20160715071752.jpg" class="imgMiniatura" alt="Primera Imagen">
+                                        </div>
+                                    </div>
+                                    <a class="left carousel-control" href="#carousel-example-captions" role="button" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left"></span>
+                                    </a>
+                                    <a class="right carousel-control" href="#carousel-example-captions" role="button" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right"></span>
+                                    </a>
+                                </div>
+
+                                <div class="caption">
+                                    <span class="label label-success pull-right">En Ejecución</span>
+                                    <h3>Mejoramiento de los servicios de Salud del Hospital II-1 Santa Gema de Yruimaguas</h3>
+                                    <p>Calle José Galvez / Julio C. Ruiz / Ucayali Yurimaguas</p>
+                                    <div class="text-center">
+										<button type="button" class="btn btn-xs btn-primary btnDetalle" data-indice="0">
+											<span class="glyphicon glyphicon-info-sign"></span> Detalle
+										</button>
+										<button type="button" class="btn btn-xs btn-primary btnMapa" data-indice="0">
+											<span class="glyphicon glyphicon-map-marker"></span> Mapa
+										</button>
+										<button type="button" class="btn btn-xs btn-success btnRegistro" data-indice="0">
+											<span class="glyphicon glyphicon-eye-open"></span> Visitas
+										</button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="thumbnail">
+                                <div id="carousel01" class="carousel slide carouselObra" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
+                                        <li data-target="#carousel-example-captions" data-slide-to="1"></li>
+                                        <li data-target="#carousel-example-captions" data-slide-to="2"></li>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <div class="item active">
+                                            <img src="img/obras/imagen20161230104939.jpg" class="imgMiniatura" alt="Primera Imagen">
+                                        </div>
+                                        <div class="item">
+                                            <img src="img/obras/imagen20161230104939.jpg" class="imgMiniatura" alt="Primera Imagen">
+                                        </div>
+                                        <div class="item">
+                                            <img src="img/obras/imagen20161230104939.jpg" class="imgMiniatura" alt="Primera Imagen">
+                                        </div>
+                                    </div>
+                                    <a class="left carousel-control" href="#carousel-example-captions" role="button" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left"></span>
+                                    </a>
+                                    <a class="right carousel-control" href="#carousel-example-captions" role="button" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right"></span>
+                                    </a>
+                                </div>
+
+                                <div class="caption">
+                                    <span class="label label-success pull-right">En Ejecución</span>
+                                    <h3>Mejoramiento de los servicios de Salud del Hospital II-1 Santa Gema de Yruimaguas</h3>
+                                    <p>Calle José Galvez / Julio C. Ruiz / Ucayali Yurimaguas</p>
+                                    <div class="text-center">
+										<button type="button" class="btn btn-xs btn-primary btnDetalle" data-indice="0">
+											<span class="glyphicon glyphicon-info-sign"></span> Detalle
+										</button>
+										<button type="button" class="btn btn-xs btn-primary btnMapa" data-indice="0">
+											<span class="glyphicon glyphicon-map-marker"></span> Mapa
+										</button>
+										<button type="button" class="btn btn-xs btn-success btnRegistro" data-indice="0">
+											<span class="glyphicon glyphicon-eye-open"></span> Visitas
+										</button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="thumbnail">
+                                <div id="carousel01" class="carousel slide carouselObra" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
+                                        <li data-target="#carousel-example-captions" data-slide-to="1"></li>
+                                        <li data-target="#carousel-example-captions" data-slide-to="2"></li>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <div class="item active">
+                                            <img src="img/obras/imagen20161230114734.jpg" class="imgMiniatura" alt="Primera Imagen">
+                                        </div>
+                                        <div class="item">
+                                            <img src="img/obras/imagen20161230114734.jpg" class="imgMiniatura" alt="Primera Imagen">
+                                        </div>
+                                        <div class="item">
+                                            <img src="img/obras/imagen20161230114734.jpg" class="imgMiniatura" alt="Primera Imagen">
+                                        </div>
+                                    </div>
+                                    <a class="left carousel-control" href="#carousel-example-captions" role="button" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left"></span>
+                                    </a>
+                                    <a class="right carousel-control" href="#carousel-example-captions" role="button" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right"></span>
+                                    </a>
+                                </div>
+
+                                <div class="caption">
+                                    <span class="label label-success pull-right">En Ejecución</span>
+                                    <h3>Mejoramiento de los servicios de Salud del Hospital II-1 Santa Gema de Yruimaguas</h3>
+                                    <p>Calle José Galvez / Julio C. Ruiz / Ucayali Yurimaguas</p>
+                                    <div class="text-center">
+										<button type="button" class="btn btn-xs btn-primary btnDetalle" data-indice="0">
+											<span class="glyphicon glyphicon-info-sign"></span> Detalle
+										</button>
+										<button type="button" class="btn btn-xs btn-primary btnMapa" data-indice="0">
+											<span class="glyphicon glyphicon-map-marker"></span> Mapa
+										</button>
+										<button type="button" class="btn btn-xs btn-success btnRegistro" data-indice="0">
+											<span class="glyphicon glyphicon-eye-open"></span> Visitas
+										</button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+						
+                    </div>
+
+
+
+                </div>
+            </div><!--fin subpantalla-->
+
+            <div id="divSubpantalla03" class="row divSubpantalla" style="display: none;">
+                <div  class="col-xs-12 col-sm-offset-2 col-sm-8">
+                    <div class="row">                            
+                        <div class="col-xs-12">
+                            <p>Seleccione una opción para ver el descuento:</p>
+                        </div>
+                    </div>
+                </div>
+            </div><!--fin subpantalla-->
+
+        </div><!--fin container-->
+
+
+
+        <!-- Modal 01 -->
+        <div class="modal fade" id="divModal01" tabindex="-1" role="dialog" aria-labelledby="h4ModalLabel01">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="h4ModalLabel01">
+							<strong>Mejoramiento de los servicios de Salud del Hospital II-1 Santa Gema de Yruimaguas</strong>
+						</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="carousel07" class="carousel slide carouselObraDetalle" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-captions" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-captions" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                        <div class="item active">
+                                            <img src="img/obras/imagen20160715072022.jpg" class="imgMiniatura" alt="Primera Imagen">
+                                        </div>
+                                        <div class="item">
+                                            <img src="img/obras/imagen20160715072242.jpg" class="imgMiniatura" alt="Primera Imagen">
+                                        </div>
+                                        <div class="item">
+                                            <img src="img/obras/imagen20160715071931.jpg" class="imgMiniatura" alt="Primera Imagen">
+                                        </div>
+                                    </div>
+                            <a class="left carousel-control" href="#carousel-example-captions" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example-captions" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                        <ul id="myTab" class="nav nav-pills" role="tablist"><!--tabs pills-->
+                            <li class="active"><a href="#general" role="tab" data-toggle="tab" class="tabDetalle">Datos Generales</a></li>
+                            <li><a href="#residente" role="tab" data-toggle="tab" class="tabDetalle">Residente</a></li>
+                            <li><a href="#supervisor" role="tab" data-toggle="tab" class="tabDetalle">Supervisor</a></li>
+                            <li><a href="#contratista" role="tab" data-toggle="tab" class="tabDetalle">Contratista</a></li>
+                        </ul>
+                        <div id="myTabContent" class="tab-content">
+                            <div class="tab-pane fade in active" id="general">
+                                <div class="panel panel-primary  tabPanel">
+                                    <!--<div class="panel-heading">Resultado de la Búsqueda</div>-->
+                                    <div class="list-group">
+                                        <!-- Inicio filas de datos -->
+
+                                        <div class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <h4 class="list-group-item-heading">RUC:</h4>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <h4 class="list-group-item-heading">20514852970 - ANDES PACIFICO SUR S.R.L. - APS S.R.L.</h4>
+                                                </div>
+                                            </div>  
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <h4 class="list-group-item-heading">Tipo Contribuyente:</h4>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <p class="list-group-item-text">SOC.COM.RESPONS. LTDA</p>
+                                                </div>
+                                            </div>  
+                                        </div>
+
+                                        <div class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <h4 class="list-group-item-heading">Nombre Comercial:</h4>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <p class="list-group-item-text">-
+
+                                                    </p>
+                                                </div>
+                                            </div>  
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <h4 class="list-group-item-heading">Fecha de Inscripci&oacute;n:</h4>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <p class="list-group-item-text">02/08/2017</p>
+                                                </div>
+                                            </div>  
+                                        </div>
+
+
+                                        <div class="list-group-item list-group-item-success">
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <h4 class="list-group-item-heading">Estado:</h4>
+                                                </div>
+                                                <div class="col-sm-7">
+
+                                                    <p class="list-group-item-text">En Ejecución
+
+
+
+                                                    </p>
+                                                </div>
+                                            </div>  
+                                        </div>
+
+
+
+                                     
+
+                                       
+
+
+                                        <div class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <h4 class="list-group-item-heading">Actividad(es) Econ&oacute;mica(s):</h4>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <table class="table tblResultado">
+                                                        <tbody>
+
+                                                            <tr><td>Principal        - CIIU 72202 - CONSULTORES  PROG. Y SUMIN. INFORMATIC.</td></tr>
+
+
+
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>  
+                                        </div>
+
+
+
+                                        <div class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <h4 class="list-group-item-heading">Comprobantes de Pago c/aut. de impresión (F. 806 u 816):</h4>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <table class="table tblResultado">
+                                                        <tbody>
+
+
+                                                            <tr><td>NINGUNO</td></tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>  
+                                        </div>
+
+                                        <div class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <h4 class="list-group-item-heading">Sistema de Emisi&oacute;n Electr&oacute;nica:</h4>
+                                                </div>
+                                                <div class="col-sm-7">
+
+
+                                                    <table class="table tblResultado">
+                                                        <tbody>
+
+
+
+                                                            <tr><td>FACTURA PORTAL                      DESDE 15/08/2017</td></tr>
+
+                                                        </tbody>
+                                                    </table>
+
+                                                </div>
+                                            </div>  
+                                        </div>
+
+
+                                        <div class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <h4 class="list-group-item-heading">Afiliado al PLE desde:</h4>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <p class="list-group-item-text">-</p>
+                                                </div>
+                                            </div>  
+                                        </div>
+
+                                        <div class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <h4 class="list-group-item-heading">Padrones:</h4>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <table class="table tblResultado">
+                                                        <tbody>
+
+
+
+
+
+
+                                                            <!-- JRR - 20/09/2010 - Se añade cambio de Igor -->
+
+
+
+
+                                                            <tr><td>NINGUNO</td></tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>  
+                                        </div>
+
+
+                                        <!-- <div class="list-group-item">
+                                                <div class="row">
+                                                        <div class="col-sm-5">
+                                                <h4 class="list-group-item-heading">Razón Social:</h4>
+                                         </div>
+                                         <div class="col-sm-7">
+                                                <p class="list-group-item-text">eeee</p>
+                                         </div>
+                                                </div>  
+                                        </div> -->
+
+
+
+                                    </div><!-- fin list-group -->
+
+
+                                    <div class="panel-footer text-center">
+                                        <small>Fecha consulta: 04/12/2017 6:10</small>
+                                    </div><!-- fin footer del panel -->
+                                </div><!--fin panel-->
+
+
+
+                            </div>
+                            <div class="tab-pane fade" id="residente">
+                                <div class="panel panel-primary tabPanel">
+                                    <!--<div class="panel-heading">Resultado de la Búsqueda</div>-->
+                                    <div class="list-group">
+                                        <!-- Inicio filas de datos -->
+
+                                        <div class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <h4 class="list-group-item-heading">RUC:</h4>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <h4 class="list-group-item-heading">20514852970 - ANDES PACIFICO SUR S.R.L. - APS S.R.L.</h4>
+                                                </div>
+                                            </div>  
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <h4 class="list-group-item-heading">Tipo Contribuyente:</h4>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <p class="list-group-item-text">SOC.COM.RESPONS. LTDA</p>
+                                                </div>
+                                            </div>  
+                                        </div>
+
+
+
+                                    </div><!-- fin list-group -->
+
+
+                                    <div class="panel-footer text-center">
+                                        <small>Fecha consulta: 04/12/2017 6:10</small>
+                                    </div><!-- fin footer del panel -->
+                                </div><!--fin panel-->
+                            </div>
+                            <div class="tab-pane fade" id="supervisor">
+                                <div class="panel panel-primary  tabPanel">
+                                    <!--<div class="panel-heading">Resultado de la Búsqueda</div>-->
+                                    <div class="list-group">
+                                        <!-- Inicio filas de datos -->
+										<div class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-12 text-center">
+                                                    <img src="img/perfil.jpg" class="img-circle imgPerfil" alt="A generic square placeholder image where only the portion within the circle circumscribed about said square is visible">
+                                                </div>
+                                            </div>  
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <h4 class="list-group-item-heading">RUC:</h4>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <h4 class="list-group-item-heading">20514852970 - ANDES PACIFICO SUR S.R.L. - APS S.R.L.</h4>
+                                                </div>
+                                            </div>  
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <h4 class="list-group-item-heading">Tipo Contribuyente:</h4>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <p class="list-group-item-text">SOC.COM.RESPONS. LTDA</p>
+                                                </div>
+                                            </div>  
+                                        </div>
+
+
+
+                                    </div><!-- fin list-group -->
+
+
+                                    <div class="panel-footer text-center">
+                                        <small>Fecha consulta: 04/12/2017 6:10</small>
+                                    </div><!-- fin footer del panel -->
+                                </div><!--fin panel-->
+                            </div>
+                            <div class="tab-pane fade" id="contratista">
+                                <div class="panel panel-primary tabPanel">
+                                    <!--<div class="panel-heading">Resultado de la Búsqueda</div>-->
+                                    <div class="list-group">
+                                        <!-- Inicio filas de datos -->
+
+                                       
+                                        <div class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <h4 class="list-group-item-heading">Tipo Contribuyente:</h4>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <p class="list-group-item-text">SOC.COM.RESPONS. LTDA</p>
+                                                </div>
+                                            </div>  
+                                        </div>
+
+
+
+                                    </div><!-- fin list-group -->
+
+
+                                    <div class="panel-footer text-center">
+                                        <small>Fecha consulta: 04/12/2017 6:10</small>
+                                    </div><!-- fin footer del panel -->
+                                </div><!--fin panel-->
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" id="btnModal02Cerrar">Cerrar</button>
+                        <button type="button" class="btn btn-success" id="btnModal02Aceptar">Visitas</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- modalVisita -->
+        <div class="modal fade" id="modalVisita" tabindex="-1" role="dialog" aria-labelledby="modalLabelModalVisita" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="modalLabelModalVisita">
+                            <!--Visitas-->
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        
+
+                                <span class="label label-success pull-right">En Ejecución</span>
+                                    <h3>Mejoramiento de los servicios de Salud del Hospital II-1 Santa Gema de Yruimaguas</h3>
+                                    <p>Calle José Galvez / Julio C. Ruiz / Ucayali Yurimaguas</p>
+                                    
+                                    <div class="text-center" style="margin-bottom: 15px;">
+                                        <button type="button" class="btn btn-success" id="btnVisitaNueva">
+                                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nueva Visita
+                                        </button>
+                                    </div>
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                Visitas
+                            </div>
+                            <table class="table table-bordered table-responsive tabla-resultado">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Fecha</th>
+                                        <th class="text-center">Tipo</th>
+                                        <th class="text-center"></th>    
+                                        <th class="text-center"></th>    
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>10/09/2017</td>
+                                        <td>Inicial</td>
+                                        <td><span class="glyphicon glyphicon-camera" aria-hidden="true"></span></td>
+                                        <td>
+                                            
+                                            <button type="button" class="btn btn-primary btn-xs">
+                                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Ver</button>
+                                            <button type="button" class="btn btn-primary btn-xs">
+                                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar</button>
+                                            <button type="button" class="btn btn-danger btn-xs">
+                                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Borrar</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>10/11/2017</td>
+                                        <td>Intermedio</td>
+                                        <td><span class="glyphicon glyphicon-camera" aria-hidden="true"></span></td>
+                                        <td>
+                                            
+                                            <button type="button" class="btn btn-primary btn-xs">
+                                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Ver</button>
+                                            <button type="button" class="btn btn-primary btn-xs">
+                                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar</button>
+                                            <button type="button" class="btn btn-danger btn-xs">
+                                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Borrar</button>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>20/11/2017</td>
+                                        <td>Intermedio</td>
+                                        <td><span class="glyphicon glyphicon-camera" aria-hidden="true"></span></td>
+                                        <td>
+                                            
+                                            <button type="button" class="btn btn-primary btn-xs">
+                                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Ver</button>
+                                            <button type="button" class="btn btn-primary btn-xs">
+                                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar</button>
+                                            <button type="button" class="btn btn-danger btn-xs">
+                                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Borrar</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>10/12/2017</td>
+                                        <td>Final</td>
+                                        <td><span class="glyphicon glyphicon-camera" aria-hidden="true"></span></td>
+                                        <td>
+                                            
+                                            <button type="button" class="btn btn-primary btn-xs">
+                                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Ver</button>
+                                            <button type="button" class="btn btn-primary btn-xs">
+                                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar</button>
+                                            <button type="button" class="btn btn-danger btn-xs">
+                                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Borrar</button>
+                                        </td>
+                                    </tr>
+                                    
+                                    
+
+                                </tbody>
+
+
+                            </table>
+
+
+
+
+
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <!--<button type="button" class="btn btn-primary">Aceptar</button>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal 02 -->
+        <div class="modal fade" id="divModal02" tabindex="-1" role="dialog" aria-labelledby="h4ModalLabel02">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title  colorVerdeClaro textoResaltado" id="h4ModalLabel02">Nueva Visita</h4>
+                    </div>
+                    <div class="modal-body modalBodySimulador">
+
+
+                        <div class="row">
+                            <div class="col-xs-12 bhoechie-tab-container">
+                                <div class="col-xs-3 bhoechie-tab-menu bhoechie-tab-menu-verde">
+                                    <div class="list-group">
+                                        <a href="#" class="list-group-item active text-center aOpcionSimuladorDos" id="aOpcionSimuladorDos1" data-id="1">
+                                            <h4 class="glyphicon glyphicon-ok"></h4><br/>Paso 1
+                                        </a>
+                                        <a href="#" class="list-group-item text-center aOpcionSimuladorDos" id="aOpcionSimuladorDos2" data-id="2">
+                                            <h4 class="glyphicon glyphicon-ok"></h4><br/>Paso 2
+                                        </a>
+                                        <a href="#" class="list-group-item text-center aOpcionSimuladorDos" id="aOpcionSimuladorDos3" data-id="3">
+                                            <h4 class="glyphicon glyphicon-ok"></h4><br/>Paso 3
+                                        </a>
+                                        <a href="#" class="list-group-item text-center aOpcionSimuladorDos" id="aOpcionSimuladorDos4" data-id="4">
+                                            <h4 class="glyphicon glyphicon-ok"></h4><br/>Paso 4
+                                        </a>
+                                        <a href="#" class="list-group-item text-center aOpcionSimuladorDos" id="aOpcionSimuladorDos5" data-id="5">
+                                            <h4 class="glyphicon glyphicon-ok"></h4><br/>Paso 5
+                                        </a>
+                                        <a href="#" class="list-group-item text-center aOpcionSimuladorDos" id="aOpcionSimuladorDos6" data-id="6">
+                                            <h4 class="glyphicon glyphicon-ok"></h4><br/>Paso 6
+                                        </a>
+                                        <!--<a href="#" class="list-group-item text-center aOpcionSimuladorDos" id="aOpcionSimuladorDos7" data-id="7">
+                                            <h4 class="glyphicon glyphicon-ok"></h4><br/>Paso 7
+                                        </a>
+                                        <a href="#" class="list-group-item text-center aOpcionSimuladorDos" id="aOpcionSimuladorDos8" data-id="8">
+                                            <h4 class="glyphicon glyphicon-ok"></h4><br/>Paso 8
+                                        </a>-->
+                                    </div>
+                                </div>
+                                <div class="col-xs-9 bhoechie-tab">
+                                    <!-- GENERALES -->
+                                    <div class="bhoechie-tab-content divTabSimuladorDos active" id="divTabSimuladorDos1" data-id="1">
+                                        
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">Seleccione visita:</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+
+
+                                               <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Visita Inicial</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Visita Intermedia</button>
+                                                    </div>  
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Visita Final</button>
+                                                    </div> 
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="row" style="margin-bottom: 15px;">
+                                            <div class="col-xs-12 colorVerdeClaro" style="font-size: 25px; line-height: 1em;font-weight: bold;">
+                                                Paso 1. Cartel de Obra
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">1. ¿La obra cuenta con cartel de obra?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+
+
+                                               <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">2. ¿El cartel de obra figura el nombre del Alcalde?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+
+                                                <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">3. ¿En el cartel de obra se encuentra el nombre de la entidad que ejecuta la obra?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+
+                                                <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">4. ¿La obra inició físicamente?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                 <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+												<div class="text-center">
+													<button type="button" class="btn btn-sm btn-primary btnDetalle" data-indice="0">
+														<span class="glyphicon glyphicon-camera"></span> Foto
+													</button>
+												</div>	
+                                            </div>
+                                        </div>
+										<div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">5. ¿La obra cuenta con cuardeno de obra?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                 <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+												<div class="text-center">
+													<button type="button" class="btn btn-sm btn-primary btnDetalle" data-indice="0">
+														<span class="glyphicon glyphicon-camera"></span> Foto
+													</button>
+												</div>	
+                                            </div>
+                                        </div>
+                                        
+										
+                                        <div class="row rowPregunta">
+                                            <div class="col-sm-12">
+                                                <nav>
+                                                    <ul class="pager">
+                                                        <!--<li class="previous" data-id="0"><a href="#" class="colorVerdeClaro"><span aria-hidden="true">←</span> Volver</a></li><!--disabled-->
+                                                        <li class="next" data-id="2"><a href="#" class="colorVerdeClaro">Siguiente <span aria-hidden="true">→</span></a></li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                    <!-- TABLA 1 - VENTA DE BIENES - DESCARTE NRUS CATEGORíA ESPECIAL -->
+                                    <div class="bhoechie-tab-content divTabSimuladorDos" id="divTabSimuladorDos2" data-id="2">
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">¿Realizará venta de únicamente productos agrícolas?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">¿Usted cultivará los productos agrícolas para luego venderlos?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">¿No los cultivará pero los venderá en un mercado de abastos?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-sm-12">
+                                                <nav>
+                                                    <ul class="pager">
+                                                        <li class="previous" data-id="1"><a href="#" class="colorVerdeClaro"><span aria-hidden="true">←</span> Volver</a></li><!--disabled-->
+                                                        <li class="next" data-id="3"><a href="#" class="colorVerdeClaro">Siguiente <span aria-hidden="true">→</span></a></li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- TABLA 2 -VENTA DE BIENES - DESCARTE DE NRUS CATEGORÍAS NORMALES -->
+                                    <div class="bhoechie-tab-content divTabSimuladorDos" id="divTabSimuladorDos3" data-id="3">
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">¿Realizará algún tipo de actividad de comercio exterior? </h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">¿Su domicilio fiscal se encuentre en zona de frontera?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">¿Se proyecta a realizar importaciones que no superen los US$ 500 por mes?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">¿Efectuará exportaciones de mercancías a través de los destinos aduaneros especiales o de excepción?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">¿Exportará a través del despacho simplificado de exportación?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">¿Realizará ventas en consignación?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">¿Realizará operaciones gravadas con ISC?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">¿Realizará operaciones gravadas con IVAP - Impuesto a la Venta de Arroz Pilado?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-sm-12">
+                                                <nav>
+                                                    <ul class="pager">
+                                                        <li class="previous" data-id="2"><a href="#" class="colorVerdeClaro"><span aria-hidden="true">←</span> Volver</a></li><!--disabled-->
+                                                        <li class="next" data-id="4"><a href="#" class="colorVerdeClaro">Siguiente <span aria-hidden="true">→</span></a></li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--TABLA 3 -VENTA DE BIENES - DESCARTE NRUS Y RER-->
+                                    <div class="bhoechie-tab-content divTabSimuladorDos" id="divTabSimuladorDos4" data-id="4">
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">¿Realiza la venta de combustible líquido y otros derivados de hidrocarburos?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">¿Realizará venta de inmuebles?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-sm-12">
+                                                <nav>
+                                                    <ul class="pager">
+                                                        <li class="previous" data-id="3"><a href="#" class="colorVerdeClaro"><span aria-hidden="true">←</span> Volver</a></li><!--disabled-->
+                                                        <li class="next" data-id="5"><a href="#" class="colorVerdeClaro">Siguiente <span aria-hidden="true">→</span></a></li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--TABLA 4 - PRESTACIÓN DE SERVICIOS - DESCARTE NRUS-->
+                                    <div class="bhoechie-tab-content divTabSimuladorDos" id="divTabSimuladorDos5" data-id="5">
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">¿Tendrá operaciones gravadas con el ISC - Impuesto Selectivo al Consumo?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">¿Prestará servicios de transporte terrestre de pasajeros?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">¿Realizará actividades como profesional?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-sm-12">
+                                                <nav>
+                                                    <ul class="pager">
+                                                        <li class="previous" data-id="4"><a href="#" class="colorVerdeClaro"><span aria-hidden="true">←</span> Volver</a></li><!--disabled-->
+                                                        <li class="next" data-id="6"><a href="#" class="colorVerdeClaro">Siguiente <span aria-hidden="true">→</span></a></li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!--TABLA 5- PRESTACIÓN DE SERVICIOS - DESCARTE NRUS Y RER-->
+                                    <div class="bhoechie-tab-content divTabSimuladorDos" id="divTabSimuladorDos6"  data-id="6">   
+                                        <div class="row rowPregunta">                                 
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">¿Prestará servicio de transporte de carga?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">¿Se utilizarán vehículos con una capacidad de carga mayor o igual a 2 TM (dos toneladas métricas)?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">¿Organizará espectáculos públicos?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                <div class="btn-group btn-group-justified">
+                                                    <button type="button" class="btn btn-default">Sí</button>
+                                                    <button type="button" class="btn btn-default">No</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">¿Realizará labores de notarios, martilleros, comisionistas y/o rematadores; agentes corredores de productos, de bolsa de valores y/u operadores especiales que realizan actividades en la Bolsa de Productos;?agentes de aduana; los intermediarios y/o auxiliares de seguros?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">¿Realizará actividades vinculadas a casinos, máquinas tragamonedas y/o similares?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">¿Realizará actividades de agencias de viaje?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">¿Realizará actividades de propaganda o publicidad?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">¿Realizará el servicio de depósito aduanero y terminal de almacenamiento?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-sm-12">
+                                                <nav>
+                                                    <ul class="pager">
+                                                        <li class="previous" data-id="5"><a href="#" class="colorVerdeClaro"><span aria-hidden="true">←</span> Volver</a></li><!--disabled-->
+                                                        <li class="next" data-id="7"><a href="#" class="colorVerdeClaro">Siguiente <span aria-hidden="true">→</span></a></li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--TABLA 6 - PRESTACIÓN DE SERVICIOS - DESCARTE SÓLO RER-->
+                                    <div class="bhoechie-tab-content divTabSimuladorDos" id="divTabSimuladorDos7" data-id="7">
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">¿Realizarán cualquier las siguientes actividades?     <br>                                                  
+
+                                                </h4>
+                                                <p class="list-group-item-text">
+                                                    (1) Actividades de médicos y odontólogos.<br>
+                                                    (2) Actividades veterinarias.<br>
+                                                    (3) Actividades jurídicas.<br>
+                                                    (4) Actividades de contabilidad, teneduría de libros y auditoría, consultoría fiscal.<br>
+                                                    (5) Actividades de arquitectura e ingeniería y actividades conexas de consultoría técnica.<br>
+                                                    (6) Programación informática, consultoría de informática y actividades conexas; actividades de servicios de información; edición de programas de informática y de software en línea y reparación de ordenadores y equipo periféricos.<br>
+                                                </p>
+                                                <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">¿Realizará actividades de contrucción?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-sm-12">
+                                                <nav>
+                                                    <ul class="pager">
+                                                        <li class="previous" data-id="6"><a href="#" class="colorVerdeClaro"><span aria-hidden="true">←</span> Volver</a></li><!--disabled-->
+                                                        <li class="next" data-id="8"><a href="#" class="colorVerdeClaro">Siguiente <span aria-hidden="true">→</span></a></li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!--Cantidades-->
+                                    <div class="bhoechie-tab-content divTabSimuladorDos" id="divTabSimuladorDos8" data-id="8">
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">¿Cuánto será la cantidad de ventas que estima obtener en el mes?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">S/.</span>
+                                                    <input type="text" class="form-control" placeholder="0.00">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">¿Cuánto será la cantidad de compras que estima obtener en el mes?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">S/.</span>
+                                                    <input type="text" class="form-control" placeholder="0.00">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">¿Cuánto será el valor de los bienes que va a destinar al negocio? Excluyendo predios y vehículos</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">S/.</span>
+                                                    <input type="text" class="form-control" placeholder="0.00">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-sm-12">
+                                                <nav>
+                                                    <ul class="pager">
+                                                        <li class="previous" data-id="7"><a href="#" class="colorVerdeClaro"><span aria-hidden="true">←</span> Volver</a></li><!--disabled-->
+                                                        <!--<li class="next" data-id="0"><a href="#" class="colorVerdeClaro">Siguiente <span aria-hidden="true">→</span></a></li>-->
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!--<div class="modal-footer">
+                            <button type="button" class="btn btn-default" id="btnModal06Cerrar" data-dismiss="modal">Cerrar</button>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+
+		
+
+        <!-- Modal 03 -->
+        <div class="modal fade" id="divModal03" tabindex="-1" role="dialog" aria-labelledby="h4ModalLabel03">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title  colorVerdeClaro textoResaltado" id="h4ModalLabel03">Mejoramiento de los servicios de Salud del Hospital II-1 Santa Gema de Yruimaguas</h4>
+                    </div>
+                    <div class="modal-body modalBodySimulador">
+
+
+                        <div class="row">
+                            <div class="col-xs-12 bhoechie-tab-container">
+                                <!--
+								<div class="col-xs-3 bhoechie-tab-menu bhoechie-tab-menu-verde">
+                                    <div class="list-group">
+                                        <a href="#" class="list-group-item active text-center aOpcionSimuladorDos" id="aOpcionSimuladorDos1" data-id="1">
+                                            <h4 class="glyphicon glyphicon-ok"></h4><br/>Paso 1
+                                        </a>
+                                        <a href="#" class="list-group-item text-center aOpcionSimuladorDos" id="aOpcionSimuladorDos2" data-id="2">
+                                            <h4 class="glyphicon glyphicon-ok"></h4><br/>Paso 2
+                                        </a>
+                                        <a href="#" class="list-group-item text-center aOpcionSimuladorDos" id="aOpcionSimuladorDos3" data-id="3">
+                                            <h4 class="glyphicon glyphicon-ok"></h4><br/>Paso 3
+                                        </a>
+                                        <a href="#" class="list-group-item text-center aOpcionSimuladorDos" id="aOpcionSimuladorDos4" data-id="4">
+                                            <h4 class="glyphicon glyphicon-ok"></h4><br/>Paso 4
+                                        </a>
+                                        <a href="#" class="list-group-item text-center aOpcionSimuladorDos" id="aOpcionSimuladorDos5" data-id="5">
+                                            <h4 class="glyphicon glyphicon-ok"></h4><br/>Paso 5
+                                        </a>
+                                        <a href="#" class="list-group-item text-center aOpcionSimuladorDos" id="aOpcionSimuladorDos6" data-id="6">
+                                            <h4 class="glyphicon glyphicon-ok"></h4><br/>Paso 6
+                                        </a>
+                                    </div>
+                                </div>-->
+                                <div class="col-xs-12 bhoechie-tab">
+                                    <!-- GENERALES -->
+                                    <div class="bhoechie-tab-content divTabSimuladorDos active" id="divTabSimuladorDos1" data-id="1">
+                                        <div class="row" style="margin-bottom: 15px;">
+                                            <div class="col-xs-12 colorVerdeClaro" style="font-size: 25px; line-height: 1em;font-weight: bold;">
+                                                Levantamiento de Observaciones
+                                            </div>
+                                        </div>
+                                        <div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">¿La obra inició físicamente?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                 <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+												<div class="text-center">
+													<button type="button" class="btn btn-sm btn-primary btnDetalle" data-indice="0">
+														<span class="glyphicon glyphicon-camera"></span> Foto
+													</button>
+												</div>	
+                                            </div>
+                                        </div>
+										<div class="row rowPregunta">
+                                            <div class="col-xs-12" >
+                                                <h4 class="list-group-item-heading">¿La obra cuenta con cuardeno de obra?</h4>
+                                                <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. </p>-->
+                                                 <div class="btn-group btn-group-justified">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">Sí</button>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default">No</button>
+                                                    </div>  
+                                                </div>
+												<div class="text-center">
+													<button type="button" class="btn btn-sm btn-primary btnDetalle" data-indice="0">
+														<span class="glyphicon glyphicon-camera"></span> Foto
+													</button>
+												</div>	
+                                            </div>
+                                        </div>
+                                        
+										<!--
+                                        <div class="row rowPregunta">
+                                            <div class="col-sm-12">
+                                                <nav>
+                                                    <ul class="pager">-->
+                                                        <!--<li class="previous" data-id="0"><a href="#" class="colorVerdeClaro"><span aria-hidden="true">←</span> Volver</a></li><!--disabled-->
+                                                        <!--<li class="next" data-id="2"><a href="#" class="colorVerdeClaro">Siguiente <span aria-hidden="true">→</span></a></li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>-->
+
+
+
+                                    </div>
+                                    
+									
+									
+                                    
+									
+                                    
+									
+									
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!--<div class="modal-footer">
+                            <button type="button" class="btn btn-default" id="btnModal06Cerrar" data-dismiss="modal">Cerrar</button>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+        
+        
+
+        <script src="a/js/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="a/js/libs/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="js/ie10-viewport-bug-workaround.js"></script>
+
+        <link rel="stylesheet" href="js/leaflet/leaflet.css"/>
+        <script src="js/leaflet/leaflet.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $.ajaxSetup({scriptCharset: "utf-8", contentType: "application/json; charset=utf-8"});
+                jQuery.support.cors = true;
+
+                iniciaControles();
+
+                animacionIntro(function () {
+                    $("#divSubpantalla00").remove();
+                    $("#divSubpantalla01").show();
+                });
+
+
+                $("#btnAceptar").bind("click", function (event) {
+                    cambiaPantalla(2);
+                    event.preventDefault();
+                    event.stopPropagation();
+                    return false;
+                });
+                $(".btnDetalle").bind("click", function (event) {
+                    $("#divModal01").modal('show');
+                    event.preventDefault();
+                    event.stopPropagation();
+                    return false;
+                });
+                $(".btnRegistro").bind("click", function (event) {
+                    $("#modalVisita").modal('show');
+                    event.preventDefault();
+                    event.stopPropagation();
+                    return false;
+                });
+                $(".btnRegistroObservacion").bind("click", function (event) {
+                    $("#divModal03").modal('show');
+                    event.preventDefault();
+                    event.stopPropagation();
+                    return false;
+                });
+                $("#btnVisitaNueva").bind("click", function (event) {
+                    $("#divModal02").modal('show');
+                    event.preventDefault();
+                    event.stopPropagation();
+                    return false;
+                });
+                
+
+
+                previous.bind("click", function () {
+                    var id = $(this).parent().closest('li').data("id");
+                    //console.log(id);
+                    divTabSimuladorDos.removeClass("active");
+                    $("#divTabSimuladorDos" + id).addClass("active");
+
+                    aOpcionSimuladorDos.removeClass("active");
+                    $("#aOpcionSimuladorDos" + id).addClass("active");
+                });
+                next.bind("click", function () {
+                    var id = $(this).parent().closest('li').data("id");
+                    //console.log(id);
+                    divTabSimuladorDos.removeClass("active");
+                    $("#divTabSimuladorDos" + id).addClass("active");
+
+                    aOpcionSimuladorDos.removeClass("active");
+                    $("#aOpcionSimuladorDos" + id).addClass("active");
+                });
+
+                aOpcionSimuladorDos.bind("click", function () {
+                    var id = $(this).data("id");
+                    //console.log(id);
+                    divTabSimuladorDos.removeClass("active");
+                    $("#divTabSimuladorDos" + id).addClass("active");
+
+                    aOpcionSimuladorDos.removeClass("active");
+                    $("#aOpcionSimuladorDos" + id).addClass("active");
+                });
+				
+				$(".btnMapa").bind("click", function() {
+                    var marker = listaMakers[$(this).attr('data-indice')];
+                    marker.openPopup();
+                });
+
+            });
+            function cambiaPantalla(pantalla) {
+                $(".divSubpantalla").hide();
+                $("#divSubpantalla0" + pantalla).show();
+
+                $(".divSubpantalla").css('visibility', 'hidden');
+                $("#divSubpantalla0" + pantalla).css('visibility', 'visible');
+            }
+            function animacionIntro(callback) {
+                setTimeout(function () {
+                    callback();
+                }, 1);//
+            }
+
+            var aOpcionSimuladorDos = null;
+            var divTabSimuladorDos = null;
+            var previous = null;
+            var next = null;
+            function iniciaControles() {
+                divTabSimuladorDos = $(".divTabSimuladorDos");
+                aOpcionSimuladorDos = $(".aOpcionSimuladorDos");
+                previous = $(".previous a");
+                next = $(".next a");
+            }
+
+
+                var listaMakers = [];
+            //var greenIcon = new LeafIcon({iconUrl: 'img/icono.png'});
+            var mapa01 = L.map('mapa01').setView([-12.0464, -77.0428], 13);
+            //var greenIcon = new LeafIcon({iconUrl: 'img/icono.png'});
+            /*var marker02 = L.marker([-12.04629, -77.0306], {icon: greenIcon}).addTo(mymap02).on('click',
+             function(e) {
+             //this.getPopup().openPopup();
+             });*/
+
+            L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+                id: 'mapbox.streets'
+            }).addTo(mapa01);
+
+            mapa01.on('popupopen', function (centerMarker) {
+                var cM = mapa01.project(centerMarker.popup._latlng);
+                cM.y -= centerMarker.popup._container.clientHeight / 2
+                mapa01.setView(mapa01.unproject(cM), 15, {animate: true});
+
+/*
+                var cM = mapa01.project(centerMarker.popup._latlng);
+                cM.y -= centerMarker.popup._container.clientHeight / 2
+                mapa01.setView(mapa01.unproject(cM), 15, {animate: true});*/
+            });
+            var marker01 = L.marker([-12.0464, -77.0428]).addTo(mapa01).on('click',
+             function(e) {
+             this.getPopup().openPopup();
+             });//, {icon: greenIcon}
+             marker01.bindPopup('<span class="label label-success pull-right">En Ejecución</span>'+
+                                    '<h3>Mejoramiento de los servicios de Salud del Hospital II-1 Santa Gema de Yruimaguas</h3>'+
+                                    '<p>Calle José Galvez / Julio C. Ruiz / Ucayali Yurimaguas</p>');
+             listaMakers.push(marker01);
+        </script>
+
+    </body>
+</html>
+
